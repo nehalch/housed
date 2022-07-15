@@ -48,14 +48,13 @@ Daemons should never have direct communication with a user through a terminal. I
 # 4. Basic Daemon Structure
 
 When a daemon starts up, it has to do some low-level housework to get itself ready for its real job. This involves a few steps:
-
-- Fork off the parent process
-- Change file mode mask (umask)
-- Open any logs for writing
-- Create a unique Session ID (SID)
-- Change the current working directory to a safe place
-- Close standard file descriptors
-- Enter actual daemon code
+ - [Fork off the parent process](#41-forking-the-parent-process)
+ - [Change file mode mask (umask)](#42-changing-the-file-mode-mask-umask)
+ - [Open any logs for writing](#43-opening-logs-for-writing)
+ - [Create a unique Session ID (SID)](#44-creating-a-unique-session-id-sid)
+ - [Change the current working directory to a safe place](#45-changing-the-working-directory)
+ - [Close standard file descriptors](#46-closing-standard-file-descriptors)
+ - Enter actual daemon code
 
 ## 4.1 Forking The Parent Process
 
