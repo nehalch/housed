@@ -1,3 +1,21 @@
+- [1. Introduction: What is a Daemon?](#1-introduction-what-is-a-daemon)
+- [2. Getting Started](#2-getting-started)
+- [3. Planning Your Daemon](#3-planning-your-daemon)
+  - [3.1 What Is It Going To Do?](#31-what-is-it-going-to-do)
+  - [3.2 How Much Interaction?](#32-how-much-interaction)
+- [4. Basic Daemon Structure](#4-basic-daemon-structure)
+  - [4.1 Forking The Parent Process](#41-forking-the-parent-process)
+  - [4.2 Changing The File Mode Mask (Umask)](#42-changing-the-file-mode-mask-umask)
+  - [4.3 Opening Logs For Writing](#43-opening-logs-for-writing)
+  - [4.4 Creating a Unique Session ID (SID)](#44-creating-a-unique-session-id-sid)
+  - [4.5 Changing The Working Directory](#45-changing-the-working-directory)
+  - [4.6 Closing Standard File Descriptors](#46-closing-standard-file-descriptors)
+- [5. Writing the Daemon Code](#5-writing-the-daemon-code)
+  - [5.1 Initialization](#51-initialization)
+  - [5.2 The Big Loop](#52-the-big-loop)
+- [6. Putting It All Together](#6-putting-it-all-together)
+  - [6.1 Complete Sample](#61-complete-sample)
+
 # 1. Introduction: What is a Daemon?
 
 A daemon (or service) is a background process that is designed to run autonomously,with little or not user intervention. The Apache web server http daemon (httpd) is one such example of a daemon. It waits in the background listening on specific ports, and serves up pages or processes scripts, based on the type of request.
